@@ -6,34 +6,34 @@ import java.sql.SQLException;
 
 import org.testng.annotations.Test;
 
-import homework.bank.dao.CustomerDao;
+import homework.bank.dao.CustomerDaoMyBatisImpl;
 import homework.bank.model.Customer;
 
-public class TestCustomerDao {
+public class TestCustomerDaoMyBatisImpl {
     @Test
-    void testDbCRUDOperations() throws SQLException {
-        CustomerDao customerDao = new CustomerDao();
+    void testMyBatisCRUDOperations() throws SQLException {
+        CustomerDaoMyBatisImpl cdmb = new CustomerDaoMyBatisImpl();
         Customer testCustomer = new Customer(
-                9,
+                3,
                 "TestFirstName",
                 "TestLastName",
                 "TestPhone",
                 "TestEmail");
 
-
         //INSERT test
-        assertTrue(customerDao.insert(testCustomer));
+        assertTrue(cdmb.insert(testCustomer));
 
         //SELECT test
-        int customerId = 13;
-        assertNotNull(customerDao.getEntityById(customerId));
+        int customerId = 54;
+        assertNotNull(cdmb.getEntityById(customerId));
 
         //UPDATE test
         testCustomer.setFirstName("UpdatedTestFirstName");
-        customerDao.update(testCustomer, customerId);
+        //testCustomer.setAddressId(1);
+        cdmb.update(testCustomer, customerId);
 
         //DELETE test
-        assertTrue(customerDao.delete(customerId));
-        assertNull(customerDao.getEntityById(customerId));
+        assertTrue(cdmb.delete(customerId));
+        assertNull(cdmb.getEntityById(customerId));
     }
 }

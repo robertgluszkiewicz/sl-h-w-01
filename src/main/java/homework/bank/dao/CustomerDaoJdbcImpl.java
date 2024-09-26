@@ -11,7 +11,7 @@ import homework.bank.connection.CustomConnection;
 import homework.bank.exception.DbCRUDException;
 import homework.bank.model.Customer;
 
-public class CustomerDao implements Dao<Customer, Integer> {
+public class CustomerDaoJdbcImpl implements Dao <Customer, Integer> {
     private static final String SELECT_ALL_CUSTOMERS = "SELECT * FROM bank.customer";
     private static final String SELECT_CUSTOMER_BY_ID = "SELECT * FROM bank.customer WHERE customer_id = ?";
     private static final String INSERT_CUSTOMER = "INSERT INTO bank.customer (address_id, first_name, last_name, phone, email) VALUES (?, ?, ?, ?, ?)";

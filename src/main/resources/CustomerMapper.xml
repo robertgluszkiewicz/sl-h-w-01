@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="homework.bank.dao.Dao">
+    <select id="getAll" resultMap="CustomerResultMap">
+        SELECT * FROM customer
+    </select>
+
+    <select id="getEntityById" parameterType="int" resultMap="CustomerResultMap">
+        SELECT * FROM customer WHERE customer_id = #{id}
+    </select>
+
+    <insert id="insert" keyColumn="customer_id" parameterType="homework.bank.model.Customer" useGeneratedKeys="true">
+        INSERT INTO customer (address_id, first_name, last_name, phone, email) VALUES (#{addressId}, #{firstName}, #{lastName}, #{phone}, #{email})
+    </insert>
+
+    <update id="update" parameterType="map">
+        UPDATE customer SET address_id = #{customer.addressId}, first_name = #{customer.firstName}, last_name = #{customer.lastName}, phone = #{customer.phone}, email = #{customer.email} WHERE customer_id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM customer WHERE customer_id = #{id}
+    </delete>
+
+    <resultMap id="CustomerResultMap" type="homework.bank.model.Customer" autoMapping="false">
+        <result column="address_id" property="addressId"/>
+        <result column="first_name" property="firstName"/>
+        <result column="last_name" property="lastName"/>
+        <result column="phone" property="phone"/>
+        <result column="email" property="email"/>
+    </resultMap>
+</mapper>
