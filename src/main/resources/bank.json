@@ -1,0 +1,72 @@
+{
+  "bank": {
+    "employees": {
+      "employee": [
+        {
+          "employee_id": 1,
+          "first_name": "John",
+          "last_name": "Smith",
+          "birth_date": "2000-01-30"
+        },
+        {
+          "employee_id": 2,
+          "first_name": "Lara",
+          "last_name": "Brown",
+          "birth_date": "1999-08-17"
+        }
+      ]
+    },
+    "departments": {
+      "department": [
+        { "name": "Sales" },
+        { "name": "Marketing" },
+        { "name": "Human Resources" }
+      ]
+    },
+    "accounts": {
+      "account": [
+        {
+          "account_id": 11,
+          "account_number": "123456789",
+          "balance": 5000.55
+        },
+        {
+          "account_id": 22,
+          "account_number": "1111000022",
+          "balance": 350.18
+        }
+      ]
+    },
+    "cards": {
+      "card": [
+        {
+          "card_id": 111,
+          "card_number": "90897060"
+        },
+        {
+          "card_id": 333,
+          "card_number": "90222903"
+        }
+      ]
+    },
+    "branches": {
+      "branch": [
+        {
+          "country": "Italy",
+          "city": "Rome",
+          "employees_number": 24
+        },
+        {
+          "country": "Spain",
+          "city": "Madrid",
+          "employees_number": 53
+        },
+        {
+          "country": "England",
+          "city": "London",
+          "employees_number": 16
+        }
+      ]
+    }
+  }
+}
